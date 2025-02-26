@@ -23,7 +23,7 @@ export default function Task(Props: Props) {
         setLoading(false)
     }
     return (
-        <div className="bg-zinc-700 rounded-lg p-2 flex items-center text-16 mx-3 my-1 ">
+        <div className="bg-[#1f1f1f] rounded-lg p-2 flex items-center text-16 mx-3 my-1 ">
             {loading ? (
                 <LoaderIcon className="animate-spin" />) : (
             
