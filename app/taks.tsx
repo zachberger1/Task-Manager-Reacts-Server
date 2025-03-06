@@ -4,7 +4,7 @@
 import { TaskType } from './Types/task-type';
 import { formatDistanceToNow } from 'date-fns';
 import { useRouterRefresh } from './use-router-refresh';
-import { LoaderIcon, Trash, Trash2 } from 'lucide-react';
+import { LoaderIcon, Trash2 } from 'lucide-react';
 import { useState } from 'react';
 
 interface Props { data: TaskType }
