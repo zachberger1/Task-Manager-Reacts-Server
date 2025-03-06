@@ -1,12 +1,12 @@
-import React from 'react';
+import Header from "./header";
 
-const EventPlanner: React.FC = () => {
+export default function EventPlanner() {
     return (
         <div>
-            <h1>Event Planner</h1>
-            <p>Welcome to the event planner application!</p>
+            <Header />
+            <div>
+                <h1>Event Planner</h1>
+            </div>
         </div>
     );
-};
-
-export default EventPlanner;
+}

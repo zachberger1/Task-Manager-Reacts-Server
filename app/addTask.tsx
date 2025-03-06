@@ -21,18 +21,18 @@ export default function AddTask() {
     }
 
     return (
-        <div className="ml-3 mb-4 bg-gray-900 p-10 w-fit mr-3 flex gap-3 mt-4 rounded-lg shadow-sm sticky">
+        <div className="ml-3 mb-4 bg-cyan-300/25 p-10 w-fit mr-3 flex gap-3 mt-4 rounded-lg shadow-sm sticky dark:bg-gray-900">
             <input
                 onChange={e => setTask(e.target.value)}
                 type="text"
                 value={task}
-                className="border border-gray-300 p-1.5 rounded-xl font-sans text-black"
+                className="border  p-1.5 rounded-xl font-sans text-black dark:text-white"
                 placeholder="Enter a task..."
             />
 
             <button
                 type="button"
-                className="bg-blue-600 p-2 hover:scale-125 transition-all rounded-lg"
+                className="bg-blue-600 p-2 hover:scale-125 transition-all rounded-lg text-white"
                 onClick={call} // Call function on button click
                 disabled={loading} // Disable button while loading
             >

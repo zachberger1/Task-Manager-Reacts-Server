@@ -1,21 +1,19 @@
 'use client';
 
-import { ReactNode } from 'react';
+import Link from 'next/link';
 
 interface NavButtonProps {
-    children: ReactNode;
     href: string;
+    children: React.ReactNode;
 }
 
-export default function NavButton({ children }: NavButtonProps) {
+export default function NavButton({ href, children }: NavButtonProps) {
     return (
-        <div>
-            <a
-                href="#"
-                className="bg-[#333333] text-white mx-1 px-4 py-2 hover:bg-[#555555]"
-            >
-                {children}
-            </a>
-        </div>
-    )
+        <Link
+            href={href}
+            className="bg-zinc-300 hover:bg-zinc-500 text-black mx-1 px-4 py-2 dark:text-white dark:bg-[#333333] dark:hover:bg-[#555555]"
+        >
+            {children}
+        </Link>
+    );
 }
