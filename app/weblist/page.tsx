@@ -1,6 +1,5 @@
 "use client";
 
-import HoverCardDemo from "@/components/comp-364";
 import { Button } from "../components/ui/button";
 import Header from "../header";
 import {
@@ -13,7 +12,7 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer";
-import { LoaderIcon, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 
@@ -76,7 +75,12 @@ export default function Friends() {
                 </DrawerContent>
             </Drawer>
             <div className="p-4 m-3 bg-[#b7b6b6] dark:bg-[#1f1f1f] w-60 rounded-lg border border-zinc-400">
-                <HoverCardDemo />
+                <div>
+                    <a className="text-sm font-medium hover:underline" href="https://mattiscohenart.com/" target="_blank">
+                        Mattis Chone Art
+                    </a>
+                    <p className="text-muted-foreground text-xs" >https://mattiscohenart.com/</p>
+                </div>
             </div>
 
 

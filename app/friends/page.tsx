@@ -4,13 +4,10 @@ import { supabase } from "../config/supabase";
 import { ContactsType } from "../Types/contact-type";
 import Contact from "./contact";
 
-interface Props {
 
-    del: () => void
 
-}
-
-export default async function Page(prop: Props) {
+export default async function Page() {
+    {
     const info = await supabase.from("contacts").select("*").order("name", { ascending: true })
     
     const contacts: ContactsType[] = info.data!
@@ -28,4 +25,4 @@ export default async function Page(prop: Props) {
             </div>
         </div>
     );
-}
+}}

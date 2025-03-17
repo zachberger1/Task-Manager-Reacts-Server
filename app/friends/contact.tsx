@@ -16,7 +16,7 @@ export default function Contact({ data }: Props) {
 
     async function del() {
         setLoading(true);
-        const response = await fetch("/api/delete-contact", {
+        await fetch("/api/delete-contact", {
             method: "DELETE",
             body: JSON.stringify({ id: data.id }),
             headers: { "Content-Type": "application/json" },
