@@ -17,17 +17,21 @@ import {
 } from "@/components/ui/drawer";
 
 
+
 export default function ContactDrawer() {
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [isOpen, setIsOpen] = useState(false); // Manage drawer open state
     const [loading, setLoading] = useState(false);
-    // const router = useRouter();
-
-
     const refresh = useRouterRefresh();
 
+
+
+
     async function handleSubmit() {
+
+
+
         if (!name.trim() || !phone.trim()) {
             alert("Please enter both name and phone number");
             return;
@@ -42,8 +46,9 @@ export default function ContactDrawer() {
         setName("");
         setPhone("");
         setIsOpen(false); // Close the drawer after submitting
-        await refresh();
+
         setLoading(false);
+        await refresh();
     }
 
 

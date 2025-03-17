@@ -21,8 +21,9 @@ export default function Contact({ data }: Props) {
             body: JSON.stringify({ id: data.id }),
             headers: { "Content-Type": "application/json" },
         });
-        await refresh();
+        
         setLoading(false);
+        await refresh();
     }
 
     return (
