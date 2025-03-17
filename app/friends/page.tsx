@@ -6,13 +6,13 @@ import Contact from "./contact";
 // import { useRouterRefresh } from "../use-router-refresh";
 // import { useRouterRefresh } from "../use-router-refresh";
 
-interface Props {
+// interface Props {
 
-    del: () => void
+//     del: () => void
 
-}
-
-export default async function Page(prop: Props) {
+// }
+// export default async function Page(prop: Props)
+export default async function Page() {
     const info = await supabase.from("contacts").select("*").order("name", { ascending: true })
     // const refresh = useRouterRefresh()
     
