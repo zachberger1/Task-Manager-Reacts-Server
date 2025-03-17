@@ -1,6 +1,6 @@
-export interface ContactsType {
+export interface WebsitsType {
     id: number
     name: string
-    number: number
+    url: string
     created_at: string
 }

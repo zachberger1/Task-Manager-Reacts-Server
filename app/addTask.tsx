@@ -2,6 +2,8 @@
 import { LoaderIcon, Plus } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { Slide, ToastContainer, toast } from 'react-toastify';
+
 
 export default function AddTask() {
     const [task, setTask] = useState("");
@@ -9,6 +11,7 @@ export default function AddTask() {
     const router = useRouter();
 
     async function call() {
+
         if (!task.trim()) { // Check if task is empty or just spaces
             alert("Please enter a task before adding.");
             return;
