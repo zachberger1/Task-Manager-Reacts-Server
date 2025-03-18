@@ -3,6 +3,8 @@ import Header from "../header";
 import { supabase } from "../config/supabase";
 import { ContactsType } from "../Types/contact-type";
 import Contact from "./contact";
+
+export const revalidate = 0
 // import { useRouterRefresh } from "../use-router-refresh";
 // import { useRouterRefresh } from "../use-router-refresh";
 
