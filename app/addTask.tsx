@@ -29,7 +29,7 @@ export default function AddTask() {
     }
 
     return (
-        <div className="ml-3 mb-4 bg-cyan-300/25 p-10 w-fit mr-3 flex gap-3 mt-4 rounded-lg shadow-sm sticky dark:bg-gray-900">
+        <div className="ml-1 mb-1 p-5 w-fit mr-3 flex gap-3 mt-1 rounded-lg shadow-sm sticky">
             <input
                 onChange={e => setTask(e.target.value)}
                 type="text"

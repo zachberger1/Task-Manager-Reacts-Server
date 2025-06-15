@@ -5,21 +5,13 @@ import { ContactsType } from "../Types/contact-type";
 import Contact from "./contact";
 
 export const revalidate = 0
-// import { useRouterRefresh } from "../use-router-refresh";
-// import { useRouterRefresh } from "../use-router-refresh";
 
-// interface Props {
-
-//     del: () => void
-
-// }
-// export default async function Page(prop: Props)
 export default async function Page() {
     const info = await supabase.from("contacts").select("*").order("name", { ascending: true })
-    // const refresh = useRouterRefresh()
+
     
     const contacts: ContactsType[] = info.data!
-    // await refresh()
+
 
     return (
         <div>

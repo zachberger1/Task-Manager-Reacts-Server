@@ -1,4 +1,4 @@
-export interface WebsitsType {
+export interface WebsitesType {
     id: number
     name: string
     url: string

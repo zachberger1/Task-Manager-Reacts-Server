@@ -4,10 +4,11 @@ import Header from "./header";
 import Task from "./taks";
 import { TaskType } from "./Types/task-type";
 
+
 export const revalidate = 0
 
 export default async function Home() {
-    const info = await supabase.from("tasks").select("*").order("id", {ascending: false})   
+    const info = await supabase.from("tasks").select("*").order("id", { ascending: true})
 
     const tasks: TaskType[] = info.data!
     return (
