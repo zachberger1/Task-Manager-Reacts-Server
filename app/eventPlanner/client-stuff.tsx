@@ -22,7 +22,7 @@ import {
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
-import { format } from "date-fns";
+
 
 export default function EventDrawer() {
     const [name, setName] = useState("");
