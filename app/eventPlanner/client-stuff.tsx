@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/drawer";
 
 // MUI imports for DateTimePicker
-import TextField from "@mui/material/TextField";
+
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
@@ -32,7 +32,7 @@ export default function EventDrawer() {
     const [isOpen, setIsOpen] = useState(false);
     const [loading, setLoading] = useState(false);
     const refresh = useRouterRefresh();
-    const formattedTime = time ? format(time, "yyyy-MM-dd HH:mm") : "";
+    
 
     async function handleSubmit() {
         if (!name.trim() || !location.trim() || !time) {
