@@ -16,6 +16,7 @@ export default async function Page() {
         <div >
             <Header />
             <EventDrawer />
+            
             <div>
                 {events.map(e => (
                     <Event key={e.id} data={e} />
