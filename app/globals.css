@@ -38,6 +38,7 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -76,7 +77,7 @@ body {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    
+
   }
 }
 
@@ -91,7 +92,96 @@ body {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* ===== AM/PM COLUMN ===== */
+/* ===== AM/PM COLUMN ===== */
+
+/* Align AM/PM column vertically and prevent scroll */
+.MuiMultiSectionDigitalClockSection-root:nth-of-type(3) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  height: 100%;
+  overflow: hidden !important;
+  touch-action: none;
+  overscroll-behavior: none;
+  padding-top: 4px; /* aligns AM with hour column */
+}
+
+/* Reset each AM/PM list item */
+.MuiMultiSectionDigitalClockSection-root:nth-of-type(3) li {
+  font-size: 0;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+/* Shared styles for icon and label */
+.MuiMultiSectionDigitalClockSection-root:nth-of-type(3) li::before,
+.MuiMultiSectionDigitalClockSection-root:nth-of-type(3) li::after {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Icon styles */
+.MuiMultiSectionDigitalClockSection-root:nth-of-type(3) li::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  top: 0.25rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* Label text styles with spacing fix */
+.MuiMultiSectionDigitalClockSection-root:nth-of-type(3) li::after {
+  font-size: 0.625rem;
+  font-family: sans-serif;
+  color: white;
+  opacity: 0.7;
+  bottom: -0.1rem; /* <-- Adjusted to fix overlap */
+}
+
+/* Sun icon and a.m. label */
+.MuiMultiSectionDigitalClockSection-root:nth-of-type(3) li:nth-child(1)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Cpath d='M12 2v2'/%3E%3Cpath d='M12 20v2'/%3E%3Cpath d='m4.93 4.93 1.41 1.41'/%3E%3Cpath d='m17.66 17.66 1.41 1.41'/%3E%3Cpath d='M2 12h2'/%3E%3Cpath d='M20 12h2'/%3E%3Cpath d='m6.34 17.66-1.41 1.41'/%3E%3Cpath d='m19.07 4.93-1.41 1.41'/%3E%3C/svg%3E");
+}
+.MuiMultiSectionDigitalClockSection-root:nth-of-type(3) li:nth-child(1)::after {
+  content: "AM";
+}
+
+/* Moon icon and p.m. label */
+.MuiMultiSectionDigitalClockSection-root:nth-of-type(3) li:nth-child(2)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z'/%3E%3C/svg%3E");
+}
+.MuiMultiSectionDigitalClockSection-root:nth-of-type(3) li:nth-child(2)::after {
+  content: "PM";
+}
+
+/* Selected AM/PM button fix — keep shape and prevent shifting */
+.MuiMultiSectionDigitalClockSection-root:nth-of-type(3) li.Mui-selected {
+  border-radius: 8px !important;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+/* ===== CLOCK SECTION (HOURS/MINUTES/SECONDS) ===== */
+
+/* Make all time selection buttons match the rounded look */
+.MuiMultiSectionDigitalClockSection-root li {
+  border-radius: 8px !important;
 }
